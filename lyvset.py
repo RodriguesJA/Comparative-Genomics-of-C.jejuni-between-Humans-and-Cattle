@@ -1,4 +1,3 @@
-##QUAST http://bioinf.spbau.ru/quast  https://github.com/ablab/quast
 import os
 import urllib
 import re
@@ -14,4 +13,3 @@ for i in Genomes_pair: #Here we are stripping tabs and spaces from file names
 	RefGenome = str(pairGenome[0])  #Here we place all of the integers within our file that we read and stripped into an array. In this case each TW# Will be in an array that is called RefGenome
 	os.system("singularity run /opt/software/lyveset/lyveset.1.1.4f.sif shuffleSplitReads.pl --numcpus 8 -o /mnt/gs18/scratch/groups/manninglab/ST982/" +RefGenome+ "/interleaved /mnt/gs18/scratch/groups/manninglab/ST982/" +RefGenome+ "/*fastq.gz")
 	print(RefGenome + "_DONE")
-## QUAST command is quast.py (don't need location as long as you are in an active env. that has this installed) -o is output file and here we are inputting one Query genome at a time with RefGenome
